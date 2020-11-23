@@ -1,7 +1,11 @@
 package app
 
 import logic.Graeffe
-import swingRAD.*
+import logic.Recurrencia
+import swingRAD.fontEcuation
+import swingRAD.setBackground
+import swingRAD.setMainBar
+import swingRAD.setProperties
 import java.awt.Dimension
 import javax.swing.*
 
@@ -15,7 +19,7 @@ class GUI: JFrame() {
     private val tfListFn = mutableListOf<JTextField>()
     private val tfListK = mutableListOf<JTextField>() // K = Constantes
 
-    private val taSalida = JTextArea()
+    private val lSalida = JLabel()
 
     //Interfaz inicial
     init{
@@ -60,8 +64,8 @@ class GUI: JFrame() {
         pSalida.setProperties(330, 542, 600, 150)
         add(pSalida)
 
-        taSalida.setProperties(32, 20, 500, 100, text = "Bienvenido.", background = null, border = null)
-        pSalida.add(taSalida)
+        lSalida.setProperties(32, 20, 500, 100, "Bienvenido.")
+        pSalida.add(lSalida)
 
         setMainBar("ecuaciones en recurrencia")
         setBackground("resources/backgroundBlack0.png")
@@ -84,25 +88,27 @@ class GUI: JFrame() {
 
         for(i in 0 until grado){
             val tfN = JTextField()
-            tfN.setProperties(30, 60 + i*32, 80, 28)
+            tfN.setProperties(30, 60 + i * 32, 80, 28)
             tfListN.add(tfN)
             pIzquierdo.add(tfListN[i])
 
             val tfFn = JTextField()
-            tfFn.setProperties(120, 60 + i*32, 80, 28)
+            tfFn.setProperties(120, 60 + i * 32, 80, 28)
             tfListFn.add(tfFn)
             pIzquierdo.add(tfListFn[i])
         }
 
-        pIzquierdo.setSize(230,
-            if(grado>7)
-                92 + grado*32
+        pIzquierdo.setSize(
+            230,
+            if (grado > 7)
+                92 + grado * 32
             else
                 300
         )
-        pIzquierdo.preferredSize = Dimension(200,
-            if(grado>7)
-                92 + grado*32
+        pIzquierdo.preferredSize = Dimension(
+            200,
+            if (grado > 7)
+                92 + grado * 32
             else
                 280
         )
@@ -121,15 +127,17 @@ class GUI: JFrame() {
             pDerecho.add(tfListK[i])
         }
 
-        pDerecho.setSize(230,
-            if(grado>6)
-                124 + grado*32
+        pDerecho.setSize(
+            230,
+            if (grado > 6)
+                124 + grado * 32
             else
                 300
         )
-        pDerecho.preferredSize = Dimension(200,
-            if(grado>7)
-                124 + grado*32
+        pDerecho.preferredSize = Dimension(
+            200,
+            if (grado > 7)
+                124 + grado * 32
             else
                 280
         )
@@ -140,12 +148,12 @@ class GUI: JFrame() {
 
     private fun calcular() {
         val grado = tfGrado.text.toInt()
-        val coef = DoubleArray(grado+1){tfListK[it].text.toDouble()}
+        val coef = DoubleArray(grado + 1){tfListK[it].text.toDouble()}
 
         //filtro de cero
         for(i in 0 .. grado){
             if(coef[i] == 0.0){
-                taSalida.text = "Por favor escriba una ecuación con termino independiente diferente de 0."
+                lSalida.text = "Por favor escriba una ecuación con termino independiente diferente de 0."
                 return
             }
         }
@@ -156,9 +164,28 @@ class GUI: JFrame() {
 
         //filtro de raiz compleja
         if (raices[0] == 0.0)
-            taSalida.text = "La función posee raices complejas"
+            lSalida.text = "La función posee raices complejas"
         else{
-            1+1
+            val n = DoubleArray(grado){tfListN[it].text.toDouble()}
+            val Fn = DoubleArray(grado){tfListFn[it].text.toDouble()}
+
+            //llamada a calcular la funcion recurrente
+            val resultado = Recurrencia.obtenerResultados(raices, n, Fn)
+
+            //reemplaza los resultados en la formula general
+            var formula = "<html><body><p>f(n) = "
+            for (i in 0 until grado) {
+                formula += if (i < grado - 1) {
+                    "()()<sup>n</sup> + "
+                } else {
+                    "()()<sup>n</sup></p></body></html>"
+                }
+            }
+
+            val f = formula
+            //retorna la formula
+            lSalida.text = f
+            repaint()
         }
     }
 
