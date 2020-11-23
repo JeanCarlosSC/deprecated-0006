@@ -85,7 +85,7 @@ class MainBar(private val jFrame: JFrame, screenWidth: Int = 1280, move: Boolean
     }
 
     fun setTitle(str: String) {
-        lTitle.setProperties(400, 0, 570, 28, str, fontTitleMini, fontColor, "CENTER")
+        lTitle.setProperties(350, 0, 570, 28, str, fontTitleMini, fontColor, "CENTER")
     }
 
 }
