@@ -142,11 +142,19 @@ class GUI: JFrame() {
         val grado = tfGrado.text.toInt()
         val coef = DoubleArray(grado+1){tfListK[it].text.toDouble()}
 
+        //filtro de cero
+        for(i in 0 .. grado){
+            if(coef[i] == 0.0){
+                taSalida.text = "Por favor escriba una ecuación con termino independiente diferente de 0."
+                return
+            }
+        }
+
         //Calcular raiz
         val g = Graeffe(coef)
         val raices = g.obtenerRaices()
 
-        //Hay alguna raiz compleja?
+        //filtro de raiz compleja
         if (raices[0] == 0.0)
             taSalida.text = "La función posee raices complejas"
         else{
