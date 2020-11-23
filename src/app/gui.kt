@@ -15,6 +15,8 @@ class GUI: JFrame() {
     private val tfListFn = mutableListOf<JTextField>()
     private val tfListK = mutableListOf<JTextField>() // K = Constantes
 
+    private val taSalida = JTextArea()
+
     //Interfaz inicial
     init{
         val lDigitar = JLabel()
@@ -57,6 +59,9 @@ class GUI: JFrame() {
         val pSalida = JPanel()
         pSalida.setProperties(330, 542, 600, 150)
         add(pSalida)
+
+        taSalida.setProperties(32, 20, 500, 100, text = "Bienvenido.", background = null, border = null)
+        pSalida.add(taSalida)
 
         setMainBar("ecuaciones en recurrencia")
         setBackground("resources/backgroundBlack0.png")
@@ -138,13 +143,15 @@ class GUI: JFrame() {
         val coef = DoubleArray(grado+1){tfListK[it].text.toDouble()}
 
         //Calcular raiz
-        val g = Graeffe(coef);
+        val g = Graeffe(coef)
         val raices = g.obtenerRaices()
 
         //Hay alguna raiz compleja?
         if (raices[0] == 0.0)
+            taSalida.text = "La función posee raices complejas"
+        else{
             1+1
-        else{ }
+        }
     }
 
 }
