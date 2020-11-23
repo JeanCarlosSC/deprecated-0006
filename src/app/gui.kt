@@ -1,5 +1,6 @@
 package app
 
+import logic.Graeffe
 import swingRAD.*
 import java.awt.Dimension
 import javax.swing.*
@@ -134,6 +135,16 @@ class GUI: JFrame() {
 
     private fun calcular() {
         val grado = tfGrado.text.toInt()
+        val coef = DoubleArray(grado+1){tfListK[it].text.toDouble()}
+
+        //Calcular raiz
+        val g = Graeffe(coef);
+        val raices = g.obtenerRaices()
+
+        //Hay alguna raiz compleja?
+        if (raices[0] == 0.0)
+            1+1
+        else{ }
     }
 
 }

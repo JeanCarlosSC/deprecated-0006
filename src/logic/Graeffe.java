@@ -225,5 +225,20 @@ public class Graeffe {
         }
         System.out.println("");
     }
+
+    public double[] obtenerRaices(){
+        hallarRaices();
+
+        if (numComplejas>0)
+            return new double[]{0.0};
+        else {
+            double[] raices = new double[numReales];
+            for (int i = 0; i < numReales; i++) {
+                raices[i] = (double) Math.round(raicesReales[i] * 100) / 100;
+            }
+            return raices;
+        }
+    }
+
 }
 
