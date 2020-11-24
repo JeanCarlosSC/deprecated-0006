@@ -2,8 +2,7 @@ package logicRAD;
 
 public class Matriz {
 
-    // function to reduce matrix to reduced
-// row echelon form.
+    // forma escalonada
     private static int PerformOperation(double[][] a) {
         int i, j, k, c, flag = 0;
         int n = a.length;
@@ -41,7 +40,7 @@ public class Matriz {
     }
 
     // To check whether infinite solutions
-// exists or no solution exists
+    // exists or no solution exists
     private static int CheckConsistency(double[][] a) {
         int i, j;
         int n = a.length;

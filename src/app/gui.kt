@@ -175,20 +175,25 @@ class GUI: JFrame() {
             //llamada a calcular la funcion recurrente
             val resultado = Recurrencia.obtenerResultados(raices, n, fN)
 
-            //reemplaza los resultados en la formula general
-            var formula = "<html><body><p>f(n) = "
-            for (i in 0 until grado) {
-                formula += if (i < grado - 1) {
-                    "(${resultado[i]})(${raices[i]})<sup>n</sup> + "
-                } else {
-                    "(${resultado[i]})(${raices[i]})<sup>n</sup></p></body></html>"
+            if(resultado.size == 1){
+                lSalida.text = "No se ha encontrado solución"
+                lSolucion.text = ""
+            } else {
+                //reemplaza los resultados en la formula general
+                var formula = "<html><body><p>f(n) = "
+                for (i in 0 until grado) {
+                    formula += if (i < grado - 1) {
+                        "(${resultado[i]})(${raices[i]})<sup>n</sup> + "
+                    } else {
+                        "(${resultado[i]})(${raices[i]})<sup>n</sup></p></body></html>"
+                    }
                 }
+
+                //retorna la formula
+                lSalida.text = formula
+
+                lSolucion.setProperties(20, 20, 100, 28, "Solución:")
             }
-
-            //retorna la formula
-            lSalida.text = formula
-
-            lSolucion.setProperties(20, 20, 100, 28, "Solución:")
 
             repaint()
         }
