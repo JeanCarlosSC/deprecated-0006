@@ -20,9 +20,10 @@ class GUI: JFrame() {
     private val tfListK = mutableListOf<JTextField>() // K = Constantes
 
     private val lSalida = JLabel()
+    private val lSolucion = JLabel()
 
     //Interfaz inicial
-    init{
+    init {
         val lDigitar = JLabel()
         lDigitar.setProperties(490, 61, 200, 28, "Grado de la ecuación")
         add(lDigitar)
@@ -66,6 +67,8 @@ class GUI: JFrame() {
 
         lSalida.setProperties(32, 20, 500, 100, "Bienvenido.")
         pSalida.add(lSalida)
+
+        pSalida.add(lSolucion)
 
         setMainBar("ecuaciones en recurrencia")
         setBackground("resources/backgroundBlack0.png")
@@ -167,24 +170,26 @@ class GUI: JFrame() {
             lSalida.text = "La función posee raices complejas"
         else{
             val n = DoubleArray(grado){tfListN[it].text.toDouble()}
-            val Fn = DoubleArray(grado){tfListFn[it].text.toDouble()}
+            val fN = DoubleArray(grado){tfListFn[it].text.toDouble()}
 
             //llamada a calcular la funcion recurrente
-            val resultado = Recurrencia.obtenerResultados(raices, n, Fn)
+            val resultado = Recurrencia.obtenerResultados(raices, n, fN)
 
             //reemplaza los resultados en la formula general
             var formula = "<html><body><p>f(n) = "
             for (i in 0 until grado) {
                 formula += if (i < grado - 1) {
-                    "()()<sup>n</sup> + "
+                    "(${resultado[i]})(${raices[i]})<sup>n</sup> + "
                 } else {
-                    "()()<sup>n</sup></p></body></html>"
+                    "(${resultado[i]})(${raices[i]})<sup>n</sup></p></body></html>"
                 }
             }
 
-            val f = formula
             //retorna la formula
-            lSalida.text = f
+            lSalida.text = formula
+
+            lSolucion.setProperties(20, 20, 100, 28, "Solución:")
+
             repaint()
         }
     }
