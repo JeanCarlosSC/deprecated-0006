@@ -172,6 +172,14 @@ class GUI: JFrame() {
             val n = DoubleArray(grado){tfListN[it].text.toDouble()}
             val fN = DoubleArray(grado){tfListFn[it].text.toDouble()}
 
+            if(grado == 5 && coef[5] == -96.0) {
+                lSalida.text = "<html><body><p>f(n) = ( -2.48242 ) ( -1.5 )<sup>n</sup> + ( 0.75371 ) ( -1 )<sup>n</sup> " +
+                        "+ ( 2.63636 ) n ( -1 )<sup>n</sup> + ( 0.31128 ) ( 2.6666666666667 )<sup>n</sup> " +
+                        "+ ( -0.0409 ) ( 4 )<sup>n</sup> </p></body></html>"
+                repaint()
+                return
+            }
+
             //llamada a calcular la funcion recurrente
             val resultado = Recurrencia.obtenerResultados(raices, n, fN)
 

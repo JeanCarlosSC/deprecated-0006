@@ -4,7 +4,7 @@ import logicRAD.Matriz;
 
 public class Recurrencia {
 
-    public static double[] obtenerResultados(double[] raices, double[] n, double[] fN){
+    public static double[] obtenerResultados(double[] raices, double[] n, double[] fN) {
 
         //plantea el sistema de ecuaciones y lo resuelve
         double[][] sistema = new double[raices.length][1+ raices.length];
