@@ -1,4 +1,4 @@
-package lib.sRAD.gui.sComponent;
+package lib.sRAD_java.gui.sComponent;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -9,8 +9,8 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Vector;
 
-import static lib.sRAD.gui.component.Resource.*;
-import static lib.sRAD.gui.sComponent.SScrollPane.getCustomScroll;
+import static lib.sRAD_java.gui.component.Resource.*;
+import static lib.sRAD_java.gui.sComponent.SScrollPane.getCustomScroll;
 
 public class STable extends JScrollPane {
 

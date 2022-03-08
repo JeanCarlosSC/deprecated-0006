@@ -1,4 +1,4 @@
-package lib.sRAD.gui.component;
+package lib.sRAD_java.gui.component;
 
 import javax.swing.*;
 import javax.swing.border.Border;

@@ -1,9 +1,9 @@
-package lib.sRAD.gui.component;
+package lib.sRAD_java.gui.component;
 
 import javax.swing.border.Border;
 import java.awt.*;
 
-import static lib.sRAD.gui.component.Resource.*;
+import static lib.sRAD_java.gui.component.Resource.*;
 
 /**
  * bg = background

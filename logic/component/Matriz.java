@@ -1,4 +1,4 @@
-package lib.sRAD.logic.component;
+package lib.sRAD_java.logic.component;
 
 public class Matriz {
 

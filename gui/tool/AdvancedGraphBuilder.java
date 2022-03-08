@@ -1,4 +1,4 @@
-package lib.sRAD.gui.tool;
+package lib.sRAD_java.gui.tool;
 
 import javax.swing.*;
 import javax.swing.border.AbstractBorder;

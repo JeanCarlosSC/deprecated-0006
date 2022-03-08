@@ -1,13 +1,14 @@
-package lib.sRAD.gui.sComponent;
+package lib.sRAD_java.gui.sComponent;
 
-import lib.sRAD.gui.component.MainBar;
-import lib.sRAD.gui.component.Theme;
+import lib.sRAD_java.gui.component.MainBar;
+import lib.sRAD_java.gui.component.Theme;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
-import static lib.sRAD.gui.component.Resource.blackBorderTransparent;
+import static lib.sRAD_java.gui.component.Resource.blackBorderTransparent;
 
 public class SFrame extends JFrame {
 
@@ -19,7 +20,7 @@ public class SFrame extends JFrame {
     }
 
     /**
-     * Crea un frame decorado con las dimensiones dadas
+     * Set a decorated frame with a width and height defined
      * @param width width of frame
      * @param height height of frame
      */
@@ -69,12 +70,12 @@ public class SFrame extends JFrame {
         setVisible(visible);
     }
 
-    public void setMainBar(String title) {
-        setMainBar(title, "resources/sRAD/exampleLogo.png");
+    public void setMainBar(String title, ActionListener exitAction) {
+        setMainBar(title, "resources/sRAD/exampleLogo.png", exitAction);
     }
 
-    public void setMainBar(String title, String pathLogo) {
-        MainBar mainBar = new MainBar(this);
+    public void setMainBar(String title, String pathLogo, ActionListener exitAction) {
+        MainBar mainBar = new MainBar(this, exitAction);
         mainBar.setTitle(title);
         mainBar.setLogo(new ImageIcon(pathLogo));
         add(mainBar);

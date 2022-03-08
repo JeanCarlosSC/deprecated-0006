@@ -1,9 +1,10 @@
-package lib.sRAD.gui.sComponent;
+package lib.sRAD_java.gui.sComponent;
 
 import javax.swing.*;
 import java.awt.*;
 
-import static lib.sRAD.gui.component.Theme.*;
+import static lib.sRAD_java.gui.component.Theme.tpBg;
+import static lib.sRAD_java.gui.component.Theme.tpFg;
 
 public class STabbedPane extends JTabbedPane {
 

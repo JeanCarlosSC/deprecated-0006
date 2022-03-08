@@ -1,41 +1,38 @@
-package lib.sRAD.gui.component;
+package lib.sRAD_java.gui.component;
 
-import lib.sRAD.gui.sComponent.SButton;
-import lib.sRAD.gui.sComponent.SFrame;
-import lib.sRAD.gui.sComponent.SLabel;
-import lib.sRAD.gui.sComponent.SPanel;
+import lib.sRAD_java.gui.sComponent.SButton;
+import lib.sRAD_java.gui.sComponent.SFrame;
+import lib.sRAD_java.gui.sComponent.SLabel;
+import lib.sRAD_java.gui.sComponent.SPanel;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-import static lib.sRAD.gui.component.Resource.*;
+import static lib.sRAD_java.gui.component.Resource.*;
 
 public class MainBar extends SPanel {
-    private final static ImageIcon iBtExitOn = new ImageIcon("resources/sRAD/mainBar/btExitOn.png");
-    private final static ImageIcon iBtExitOff = new ImageIcon("resources/sRAD/mainBar/btExitOff.png");
+
     private final static ImageIcon iBtMinOff = new ImageIcon("resources/sRAD/mainBar/btMinOff.png");
     private final static ImageIcon iBtMinOn = new ImageIcon("resources/sRAD/mainBar/btMinOn.png");
-    private static int frameWidth = 1280;
-    private static SButton btExit = null;
-    private static SButton btMin = null;
 
     private final SPanel mainPanel;
     private final SLabel lLogo = new SLabel();
     private final SLabel lTitle = new SLabel();
+    private ActionListener exitAction;
+    private SButton btExit = null;
+    private SButton btMin = null;
     private int x0 = 0;
     private int y0 = 0;
+    private int frameWidth;
 
     /**
-     * Constructor decorado por defecto
+     * Set the default config, it requires a frame with size established
      * @param frame frame que agrega el main bar
      */
-    public MainBar(SFrame frame) {
-        this(frame, 1280, true, Theme.bg2, DTII5);
-    }
-
-    public MainBar(SFrame frame, int screenWidth) {
-        this(frame, screenWidth, true, Theme.bg2, DTII5);
+    public MainBar(SFrame frame, ActionListener exitAction) {
+        this(frame, frame.getWidth(), true, Theme.bg2, DTII5);
+        btExit.addActionListener(exitAction);
     }
 
     /**
@@ -49,7 +46,6 @@ public class MainBar extends SPanel {
     public MainBar(SFrame frame, int screenWidth, Boolean move, Color backgroundColor, Color borderColor) {
         super();
         frameWidth  = screenWidth;
-
         mainPanel = new SPanel(0, 0, screenWidth, 27, backgroundColor, null, null);
 
         if(move){
@@ -85,38 +81,9 @@ public class MainBar extends SPanel {
      * Botón para TERMINAR EJECUCIÓN
      * @return botón decorado e implementado
      */
-    public static SButton getBtExit() {
+    public SButton getBtExit() {
         if (btExit == null) {
-            btExit = new SButton(frameWidth - 48, 0, iBtExitOff, defaultCursor);
-            btExit.addMouseListener (new MouseListener() {
-                @Override
-                public void mouseExited(MouseEvent e) {
-                    if(e.getSource() == btExit) {
-                        btExit.setIcon(iBtExitOff);
-                    }
-                }
-
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                    if(e.getSource() == btExit) {
-                        if(JOptionPane.showConfirmDialog(null, "Desea salir?") == 0) {
-                            System.exit(0);
-                        }
-                    }
-                }
-
-                @Override
-                public void mousePressed(MouseEvent e) {}
-
-                @Override
-                public void mouseReleased(MouseEvent e) {}
-
-                @Override
-                public void mouseEntered(MouseEvent e) {
-                    if(e.getSource() == btExit)
-                        btExit.setIcon(iBtExitOn);
-                }
-            });
+            btExit = new BtExit(frameWidth - 48, 0);
         }
         return btExit;
     }
@@ -126,7 +93,7 @@ public class MainBar extends SPanel {
      * @param frame ventana que se minimizará
      * @return botón para minimizar frame
      */
-    public static SButton getBtMin(SFrame frame) {
+    public SButton getBtMin(SFrame frame) {
         if (btMin == null) {
             btMin =new SButton(frameWidth - 75, 0, iBtMinOff, defaultCursor);
             btMin.addMouseListener(new MouseListener() {

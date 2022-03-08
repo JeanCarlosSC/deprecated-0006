@@ -1,6 +1,6 @@
-package lib.sRAD.gui.sComponent;
+package lib.sRAD_java.gui.sComponent;
 
-import lib.sRAD.gui.component.Theme;
+import lib.sRAD_java.gui.component.Theme;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import static lib.sRAD.gui.component.Resource.*;
+import static lib.sRAD_java.gui.component.Resource.*;
 
 public class SButton extends JButton {
 
