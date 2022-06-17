@@ -82,8 +82,8 @@ public class Extension {
         return toCOP((int) a)+String.format("%.2f",a%1).substring((a>=0)?1:2);
     }
 
-    public static String toPTJ(double porcentaje) {
-        return "%.2f".formatted(porcentaje*100) + "%";
+    public static String toPTG(double percentage) {
+        return "%.2f".formatted(percentage*100) + "%";
     }
 
     public static Boolean isDouble(String str) {
