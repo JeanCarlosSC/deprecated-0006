@@ -78,6 +78,10 @@ public class Extension {
         return str;
     }
 
+    public static String toCOP(double a) {
+        return toCOP((int) a)+String.format("%.2f",a%1).substring(1);
+    }
+
     public static String toPTJ(double porcentaje) {
         return "%.2f".formatted(porcentaje*100) + "%";
     }
