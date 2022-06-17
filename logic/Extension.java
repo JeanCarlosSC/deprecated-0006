@@ -79,7 +79,7 @@ public class Extension {
     }
 
     public static String toCOP(double a) {
-        return toCOP((int) a)+String.format("%.2f",a%1).substring(1);
+        return toCOP((int) a)+String.format("%.2f",a%1).substring((a>=0)?1:2);
     }
 
     public static String toPTJ(double porcentaje) {
