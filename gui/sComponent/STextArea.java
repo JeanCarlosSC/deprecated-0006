@@ -5,6 +5,7 @@ import javax.swing.border.Border;
 import java.awt.*;
 
 import static lib.sRAD_java.gui.component.Resource.*;
+import static lib.sRAD_java.gui.component.Theme.taF;
 
 public class STextArea extends JTextArea {
 
@@ -31,7 +32,7 @@ public class STextArea extends JTextArea {
      * @param text
      */
     public STextArea(int x, int y, int width, int height, String text) {
-        setProperties(x, y, width, height, false, true, text, DTII14, null, fontText, null, LEFT_ALIGNMENT);
+        setProperties(x, y, width, height, false, true, text, taF, null, fontText, null, LEFT_ALIGNMENT);
     }
 
     public void setProperties(int x, int y, int width, int height, Boolean editable, Boolean lineWrap, String text, Color foreground, Color background,

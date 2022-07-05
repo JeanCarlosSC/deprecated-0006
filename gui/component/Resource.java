@@ -90,7 +90,7 @@ public class Resource {
     public final static Font fontTitleMini = new Font("Arial", Font.PLAIN, 14); //used in title of mainBar, buttons
     public final static Font fontVersion = new Font("Arial", Font.PLAIN, 14);
 
-    public final static Font fontText = new Font("Arial", Font.PLAIN, 17);
+    public final static Font fontText = new Font("Courier New", Font.PLAIN, 17);
     public final static Font WSFS = new Font("Arial", Font.ITALIC, 20); //windows standard font subtitle
     public final static Font fontEcuation = new Font("Arial Narrow", Font.ITALIC, 20);
     public final static Font fontTextMini = new Font("Arial Narrow", Font.PLAIN, 14);

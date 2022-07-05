@@ -49,35 +49,6 @@ public class Extension {
         return str;
     }
 
-    public static String toCOP(double valor) {
-        String str = "";
-        int num = (int) valor;
-        int ajusteModulo = 0;
-
-        if(num < 0) {
-            str += "-";
-            num *= -1;
-            ajusteModulo++;
-        }
-        str += "$";
-        String number = Integer.toString(num);
-
-        while (!number.isEmpty()) {
-            if(number.length()% 3 == 0 && str.length() != 1+ajusteModulo) {
-                str += "."+number.charAt(0);
-            }
-            else {
-                str += number.charAt(0);
-            }
-            number = number.substring(1);
-        }
-
-        String decimal =("%.2f".formatted(valor % 1)).substring(1 + ajusteModulo);
-        str += decimal;
-
-        return str;
-    }
-
     public static String toCOP(double a) {
         return toCOP((int) a)+String.format("%.2f",a%1).substring((a>=0)?1:2);
     }

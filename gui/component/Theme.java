@@ -15,6 +15,8 @@ public class Theme {
     public static Color fBg = DTII2;
     //button
     public static Color btBg = DTII5;
+    public static Color btBg2 = DTII8;
+    public static Color btF = DTII14;
     //ventana emergente
     public static Color veBg = DTII4;
     //panel
@@ -27,4 +29,13 @@ public class Theme {
     //tabbed pane
     public static Color tpBg = WP4;
     public static Color tpFg = BLACK; // foreground
+    // text area
+    public static Color taF = DTII14;
+
+    public static void setLightTheme() {
+        btBg = MDB5;
+        btBg2 = MDB4;
+        btF = BLACK;
+        taF = BLACK;
+    }
 }
