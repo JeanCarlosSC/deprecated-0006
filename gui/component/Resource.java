@@ -84,7 +84,7 @@ public class Resource {
     public final static Color DTII14 = new Color(187,187,187); //main color font
 // -----------------------------------------FONT------------------------------------------------------------------------
     //Windows standard (es windows porque funciona en windows, es decir, no se ha basado en fuentes del SO)
-    public final static Font fontTitle = new Font("Gill Sans MT Condensed", Font.BOLD, 64);
+    public final static Font fontTitle = new Font("Gill Sans MT Condensed", Font.BOLD, 32);
     public final static Font fontTitle1 = new Font("Arial", Font.BOLD, 28);
     public final static Font fontTitle2 = new Font("Arial", Font.BOLD, 18);
     public final static Font fontTitleMini = new Font("Arial", Font.PLAIN, 14); //used in title of mainBar, buttons
