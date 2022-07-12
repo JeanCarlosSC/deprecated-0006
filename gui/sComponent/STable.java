@@ -1,4 +1,4 @@
-package lib.sRAD_java.gui.sComponent;
+package sRAD_java.gui.sComponent;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -9,13 +9,13 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Vector;
 
-import static lib.sRAD_java.gui.component.Resource.*;
-import static lib.sRAD_java.gui.sComponent.SScrollPane.getCustomScroll;
+import static sRAD_java.gui.component.Resource.*;
+import static sRAD_java.gui.sComponent.SScrollPane.getCustomScroll;
 
 public class STable extends JScrollPane {
 
     public STable(int x, int y, int width, int height, ArrayList<ArrayList<String>> matriz) {
-        this(x, y, width, height, matriz, 200, 30);
+        this(x, y, width, height, matriz, 100, 30);
     }
 
     public STable(int x, int y, int width, int height, ArrayList<ArrayList<String>> matriz, int cellWidth, int cellHeight) {
@@ -38,26 +38,26 @@ public class STable extends JScrollPane {
             }
         }
 
-        final JTable tabla = new JTable();
-        setProperties(tabla, modelo, cellHeight);
-        tabla.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        tabla.setRowHeight(cellHeight);
+        final JTable table = new JTable();
+        setProperties(table, modelo, cellHeight);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        table.setRowHeight(cellHeight);
         for (int i=0; i<matriz.get(0).size(); i++) {
-            tabla.getColumnModel().getColumn(i).setPreferredWidth(cellWidth);
-            tabla.getColumnModel().getColumn(i).setMaxWidth(cellWidth);
-            tabla.getColumnModel().getColumn(i).setMinWidth(cellWidth);
+            table.getColumnModel().getColumn(i).setPreferredWidth(cellWidth);
+            table.getColumnModel().getColumn(i).setMaxWidth(cellWidth);
+            table.getColumnModel().getColumn(i).setMinWidth(cellWidth);
         }
-        tabla.setSize(cellWidth*matriz.get(0).size(), cellHeight*matriz.size());
-        tabla.setPreferredSize(new Dimension(cellWidth*matriz.get(0).size(), cellHeight*(matriz.size()-1)));
+        table.setSize(cellWidth*matriz.get(0).size(), cellHeight*matriz.size());
+        table.setPreferredSize(new Dimension(cellWidth*matriz.get(0).size(), cellHeight*(matriz.size()-1)));
 
-        JTableHeader header = tabla.getTableHeader();
+        JTableHeader header = table.getTableHeader();
         header.setBackground(DTII6);
         header.setReorderingAllowed(false);
         header.setSize(cellWidth*matriz.get(0).size(), 30);
         header.setPreferredSize(new Dimension(cellWidth*matriz.get(0).size(), 30));
-        header.setDefaultRenderer(getCustomTable(DTII6, null, null, WHITE, fontText));
+        header.setDefaultRenderer(getCustomTable(DTII6, null, null, WHITE, fontText1));
 
-        setViewportView(tabla);
+        setViewportView(table);
         setLocation(x, y);
         setSize(width, height);
 
@@ -98,7 +98,7 @@ public class STable extends JScrollPane {
 
 //advanced graphic builder
     public static DefaultTableCellRenderer getCustomTable() {
-        return getCustomTable(DTII3, DTII3, MDB1, DTII14, fontText);
+        return getCustomTable(DTII3, DTII3, MDB1, DTII14, fontText1);
     }
 
     public static DefaultTableCellRenderer getCustomTable(

@@ -1,9 +1,9 @@
-package lib.sRAD_java.gui.component;
+package sRAD_java.gui.component;
 
 import javax.swing.border.Border;
 import java.awt.*;
 
-import static lib.sRAD_java.gui.component.Resource.*;
+import static sRAD_java.gui.component.Resource.*;
 
 /**
  * bg = background
@@ -12,7 +12,7 @@ public class Theme {
     //general
     public static Color bg2 = DTII1;
     //frame
-    public static Color fBg = DTII2;
+    public static Color fBg = WHITE;
     //button
     public static Color btBg = DTII5;
     public static Color btBg2 = DTII8;

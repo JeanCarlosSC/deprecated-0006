@@ -1,4 +1,4 @@
-package lib.sRAD_java.logic;
+package sRAD_java.logic;
 
 import java.util.ArrayList;
 import java.util.StringTokenizer;

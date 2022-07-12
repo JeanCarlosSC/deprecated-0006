@@ -1,12 +1,12 @@
-package lib.sRAD_java.gui.sComponent;
+package sRAD_java.gui.sComponent;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 
 import java.awt.*;
 
-import static lib.sRAD_java.gui.component.Resource.fontText;
-import static lib.sRAD_java.gui.component.Theme.*;
+import static sRAD_java.gui.component.Resource.fontText;
+import static sRAD_java.gui.component.Theme.*;
 
 public class SComboBox extends JComboBox {
 

@@ -1,6 +1,6 @@
-package lib.sRAD_java.gui.component;
+package sRAD_java.gui.component;
 
-import lib.sRAD_java.gui.sComponent.SButton;
+import sRAD_java.gui.sComponent.SButton;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;

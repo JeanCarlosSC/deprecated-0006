@@ -1,14 +1,14 @@
-package lib.sRAD_java.gui.sComponent;
+package sRAD_java.gui.sComponent;
 
-import lib.sRAD_java.gui.component.MainBar;
-import lib.sRAD_java.gui.component.Theme;
+import sRAD_java.gui.component.MainBar;
+import sRAD_java.gui.component.Theme;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-import static lib.sRAD_java.gui.component.Resource.blackBorderTransparent;
+import static sRAD_java.gui.component.Resource.blackBorderTransparent;
 
 public class SFrame extends JFrame {
 
@@ -25,7 +25,7 @@ public class SFrame extends JFrame {
      * @param height height of frame
      */
     public SFrame(int width, int height) {
-        setProperties(width, height, Theme.fBg, true, blackBorderTransparent, null, true, EXIT_ON_CLOSE, null);
+        setProperties(width, height, Theme.fBg, false, blackBorderTransparent, null, true, EXIT_ON_CLOSE, null);
     }
 
     /**

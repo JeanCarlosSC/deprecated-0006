@@ -1,11 +1,11 @@
-package lib.sRAD_java.gui.sComponent;
+package sRAD_java.gui.sComponent;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
-import static lib.sRAD_java.gui.component.Resource.*;
-import static lib.sRAD_java.gui.component.Theme.taF;
+import static sRAD_java.gui.component.Resource.*;
+import static sRAD_java.gui.component.Theme.taF;
 
 public class STextArea extends JTextArea {
 

@@ -1,11 +1,11 @@
-package lib.sRAD_java.gui.sComponent;
+package sRAD_java.gui.sComponent;
 
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicScrollBarUI;
 
 import java.awt.*;
 
-import static lib.sRAD_java.gui.component.Resource.*;
+import static sRAD_java.gui.component.Resource.*;
 
 public class SScrollPane extends JScrollPane {
 

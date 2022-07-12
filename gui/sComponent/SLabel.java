@@ -1,10 +1,10 @@
-package lib.sRAD_java.gui.sComponent;
+package sRAD_java.gui.sComponent;
 
 import javax.swing.*;
 import java.awt.*;
 
-import static lib.sRAD_java.gui.component.Resource.DTII14;
-import static lib.sRAD_java.gui.component.Resource.fontText;
+import static sRAD_java.gui.component.Resource.DTII14;
+import static sRAD_java.gui.component.Resource.fontText;
 
 public class SLabel extends JLabel {
 

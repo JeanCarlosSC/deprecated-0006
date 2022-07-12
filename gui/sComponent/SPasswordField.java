@@ -1,14 +1,14 @@
-package lib.sRAD_java.gui.sComponent;
+package sRAD_java.gui.sComponent;
 
-import lib.sRAD_java.gui.component.Theme;
+import sRAD_java.gui.component.Theme;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 
 import java.awt.*;
 
-import static lib.sRAD_java.gui.component.Resource.DTII4Border;
-import static lib.sRAD_java.gui.component.Resource.fontText;
+import static sRAD_java.gui.component.Resource.DTII4Border;
+import static sRAD_java.gui.component.Resource.fontText;
 
 public class SPasswordField extends JPasswordField {
 

@@ -1,15 +1,15 @@
-package lib.sRAD_java.gui.component;
+package sRAD_java.gui.component;
 
-import lib.sRAD_java.gui.sComponent.SButton;
-import lib.sRAD_java.gui.sComponent.SFrame;
-import lib.sRAD_java.gui.sComponent.SLabel;
-import lib.sRAD_java.gui.sComponent.SPanel;
+import sRAD_java.gui.sComponent.SButton;
+import sRAD_java.gui.sComponent.SFrame;
+import sRAD_java.gui.sComponent.SLabel;
+import sRAD_java.gui.sComponent.SPanel;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-import static lib.sRAD_java.gui.component.Resource.*;
+import static sRAD_java.gui.component.Resource.*;
 
 public class MainBar extends SPanel {
 

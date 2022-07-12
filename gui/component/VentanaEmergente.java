@@ -1,7 +1,7 @@
-package lib.sRAD_java.gui.component;
+package sRAD_java.gui.component;
 
-import lib.sRAD_java.gui.component.Theme;
-import lib.sRAD_java.gui.sComponent.SFrame;
+import sRAD_java.gui.component.Theme;
+import sRAD_java.gui.sComponent.SFrame;
 
 public class VentanaEmergente extends SFrame {
     private final SFrame frame;

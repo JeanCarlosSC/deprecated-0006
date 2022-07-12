@@ -1,11 +1,11 @@
-package lib.sRAD_java.gui.sComponent;
+package sRAD_java.gui.sComponent;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
-import static lib.sRAD_java.gui.component.Theme.pB;
-import static lib.sRAD_java.gui.component.Theme.pBg;
+import static sRAD_java.gui.component.Theme.pB;
+import static sRAD_java.gui.component.Theme.pBg;
 
 public class SPanel extends JPanel {
 
