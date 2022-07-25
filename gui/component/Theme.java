@@ -38,4 +38,9 @@ public class Theme {
         btF = BLACK;
         taF = BLACK;
     }
+    
+    public static void setDarkTheme() {
+        // frame
+        fBg = DTII3;
+    }
 }

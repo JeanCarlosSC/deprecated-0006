@@ -6,15 +6,13 @@ import sRAD_java.gui.component.Theme;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import static sRAD_java.gui.component.Resource.blackBorderTransparent;
 
 public class SFrame extends JFrame {
 
-    /**
-     * javax.swing.JFrame constructor
-     */
     public SFrame() {
         super();
     }
@@ -28,6 +26,11 @@ public class SFrame extends JFrame {
         setProperties(width, height, Theme.fBg, false, blackBorderTransparent, null, true, EXIT_ON_CLOSE, null);
     }
 
+    public SFrame(int width, int height, String title) {
+        setUndecorated(true);
+        setProperties(width, height, Theme.fBg, false, blackBorderTransparent, null, true, EXIT_ON_CLOSE, null);
+        setMainBar(title);
+    }
     /**
      * Default properties of frame
      */
@@ -57,7 +60,6 @@ public class SFrame extends JFrame {
      */
     public void setProperties(int width, int height, Color background, Boolean undecorated, Border border, Component relativeLocation) {
         setProperties(width, height, background);
-        setUndecorated(undecorated);
         rootPane.setBorder(border);
         setLocationRelativeTo(relativeLocation);
     }
@@ -70,6 +72,15 @@ public class SFrame extends JFrame {
         setVisible(visible);
     }
 
+    public void setMainBar(String title) {
+        ActionListener exit = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        };
+        setMainBar(title, "resources/sRAD/exampleLogo.png", exit);
+    }
     public void setMainBar(String title, ActionListener exitAction) {
         setMainBar(title, "resources/sRAD/exampleLogo.png", exitAction);
     }

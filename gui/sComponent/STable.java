@@ -14,7 +14,7 @@ import static sRAD_java.gui.sComponent.SScrollPane.getCustomScroll;
 
 public class STable extends JScrollPane {
 
-    public STable(int x, int y, int width, int height, ArrayList<ArrayList<String>> matriz) {
+    public STable(int x, int y, int width, int height, int cellWidth, ArrayList<ArrayList<String>> matriz) {
         this(x, y, width, height, matriz, 100, 30);
     }
 
